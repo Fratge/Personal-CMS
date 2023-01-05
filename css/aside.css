@@ -1,0 +1,42 @@
+aside{
+    width: 500px;
+    border: 3px solid rgb(146, 251, 93);
+    margin-left: 25px;
+    margin-right: 150px;
+    margin-top: 250px;
+    height: 250px;
+    height: 250px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+aside > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 25px;
+    margin-top: 25px;
+
+}
+
+aside > ul > li{
+    list-style-type: circle;
+    color: white;
+}
+
+aside > ul > li > a{
+    list-style-type: circle;
+    color: white;
+    font-size: 17px;
+
+}
+
+aside > ul > li > a:hover{
+    list-style-type: circle;
+    color: rgb(169, 255, 145);
+}
+
+aside > p {
+    font-size: 25px;
+    color: green;
+}

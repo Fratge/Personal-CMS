@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<h2 class="article-crees">Articles crées :  </h1>
+
+{% for article_unique in articles %}
+<div class="article-container">
+    <p class="article-titre">{{article_unique.h1_article}}</p> 
+    <p class="article-chapo">{{article_unique.chapo_article}}</p>
+    <p class="article-auteur">{{article_unique.auteur_article}}</p>
+    <div class="article-buttons">
+        <a class="article-voir" href="controleur.php?page=article&action=read&id={{article_unique.id_article}}">Voir l'article</a>
+        <a class="article-modifier" href="controleur.php?page=article&action=edit&id={{article_unique.id_article}}">Modifier</a>
+        <a class="article-supprimer" href="controleur.php?page=article&action=delete&id={{article_unique.id_article}}">Supprimer</a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

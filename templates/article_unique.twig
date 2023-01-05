@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<div class="article-unique-container">
+    <h2 class="article-crees">Article</h2>
+
+    <div class="article-unique">
+        <p class="article-titre-unique">{{article.h1_article}}</p> 
+        <p class="article-chapo-unique">{{article.chapo_article}}</p>
+        <p class="article-auteur-unique">Auteur : {{article.auteur_article}}</p>
+    </div>
+
+
+    {% for element in article.elements_article %}
+    <div class="article-element">
+        <{{element.balise}} class="{{ element.style }}">{{ element.contenu }} </{{element.balise}}>
+        <img src="{{element.src}}">
+    </div>
+    {% endfor %}
+    <div class="article-unique-form">
+        <h2>Créer un elements : </h2>
+        <p>Il est important d'entrer le lien d'une image dans le champ src </p>
+        <form method=post action="controleur.php?page=elements&action=create">
+            <input type="hidden" name="id">
+            <input type="hidden" name="id_article" value='{{article.id_article}}'>
+            <select name="balise" id="balise">
+                <option value="p">paragraphe</option>
+                <option value="h1">h1</option>
+                <option value="h2">h2</option>
+                <option value="h3">h3</option>
+            </select>
+            <input type="text" name="contenu" placeholder="contenu">
+            <input type="text" name="alt" placeholder="alt">
+            <input type="text" name="src" placeholder="src">
+            <input type="submit" value="Créer">
+        </form>
+    </div>
+</div>
+{% endblock %}

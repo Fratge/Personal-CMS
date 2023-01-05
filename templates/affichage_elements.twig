@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<h2 class="article-crees">Elements crées</h2>
+
+{% for element in elements %}
+<div class="element-container">
+    <{{element.balise}}>{{ element.contenu }} </{{element.balise}}>
+    <img src="{{element.src}}">
+    <div class="element-button-container">
+        <a class="element-button-supprimer" href="controleur.php?page=elements&action=delete&id={{element.id}}">Supprimer</a>
+        <a class="element-button-modifier" href="controleur.php?page=elements&action=edit&id={{element.id}}">Modifier</a>
+    </div>
+
+</div>
+{% endfor %}
+
+{% endblock %}

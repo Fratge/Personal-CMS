@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sébastien GROSS | INFO3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/affichage_articles.css">
+    <link rel="stylesheet" href="css/elements.css">
+    <link rel="stylesheet" href="css/create.css">
+    <link rel="stylesheet" href="css/aside.css">
+</head>
+
+
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="controleur.php?page=form_elements">Créer un article</a></li> 
+            <li><a href="controleur.php?page=elements&action=read">Afficher tout les elements</a></li> 
+            <li><a href="controleur.php?page=article&action=read">Afficher tout les articles</a></li> 
+        </ul>
+    </nav>
+
+    <main>
+        <aside>
+            <p> Tout nos articles </p>
+            <ul>
+            {% for article in aside %}
+                <li><a class="aside-title" href="controleur.php?page=article&action=read&id={{article.id_article}}">{{article.h1_article}}</a></li>
+            {% endfor %}
+            </ul>
+        </aside>
+        <div class="main-content">
+            {% block main %}
+
+            {% endblock %} 
+        </div>
+    </main>
+
+
+</body>
+
+</html>

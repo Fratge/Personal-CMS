@@ -1,0 +1,118 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1
+-- Généré le : dim. 04 déc. 2022 à 14:20
+-- Version du serveur : 10.4.27-MariaDB
+-- Version de PHP : 8.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `blog`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `article`
+--
+
+CREATE TABLE `article` (
+  `id_article` bigint(20) UNSIGNED NOT NULL,
+  `h1_article` text NOT NULL,
+  `chapo_article` text NOT NULL,
+  `auteur_article` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `article`
+--
+
+INSERT INTO `article` (`id_article`, `h1_article`, `chapo_article`, `auteur_article`) VALUES
+(15, 'Les 100 formes de bonheur', 'Toutes les formes de bonheur représentées par un ingénieur, n\'hésitez pas à y jeter un coup d\'oeil ', 'Loïc Gross'),
+(17, 'Maultaschen', 'Les Maultaschen sont des ravioles de forme rectangulaire, traditionnelles de la région allemande de Souabe (Bade-Wurtemberg).', 'Marvin Schiff'),
+(18, 'Tarte flambée', 'La tarte flambée, ou flammekueche, est une recette traditionnelle des cuisine alsacienne, cuisine de la Moselle germanophone.', 'Cyril Gane');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `elements`
+--
+
+CREATE TABLE `elements` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `balise` text NOT NULL,
+  `contenu` text NOT NULL,
+  `src` text NOT NULL,
+  `alt` text NOT NULL,
+  `id_article` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `elements`
+--
+
+INSERT INTO `elements` (`id`, `balise`, `contenu`, `src`, `alt`, `id_article`) VALUES
+(87, 'p', 'Le bonheur est un état émotionnel agréable2, équilibré et durable3 dans lequel se trouve quelqu\'un qui estime être parvenu à la satisfaction4 des aspirations et désirs qu\'il juge importants. Il perçoit alors sa propre situation de manière positive et ressent un sentiment de plénitude et de sérénité, d\'où le stress, l\'inquiétude et le trouble sont absents. Cette impression ressentie, indispensable à la survie des mammifères, est principalement le résultat de la production de sérotonine,', 'https://medias.cerveauetpsycho.fr/api/v1/images/view/5e56963f8fe56f42203343f7/wide_1300/image.jpg', 'bonheur', 15),
+(89, 'p', 'Les oignons sont hachés menu, revenus à la poêle et mélangés avec de la chapelure (ou de la mie de pain), des épinards et de la viande hachée (la plupart du temps de la viande de veau), le tout assaisonné. La pâte des ravioles est ensuite passée au laminoir ; elle doit être aussi fine que possible. Puis le mélange de viande est étalé sur la pâte. Pour refermer les Maultaschen, les bords peuvent être pressés l\'un contre l\'autre (avec un petit peu d\'œuf, ils tiennent mieux). Le pliage peut donner une forme carrée, rectangulaire ou plus ou moins régulière. ', 'data:image/jpeg;base64,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', 'texte info', 17),
+(90, 'p', 'La tarte flambée, ou flammekueche, est une recette traditionnelle des cuisine alsacienne, cuisine de la Moselle germanophone, et de la cuisine allemande des régions adjacentes du Pays de Bade, du Palatinat', 'https://www.adeline-cuisine.fr/wp-content/uploads/2016/06/fond-de-tarte-flambee-flammekueche-recette.jpg', 'tarte flambée', 18);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id_article`),
+  ADD UNIQUE KEY `id_article` (`id_article`);
+
+--
+-- Index pour la table `elements`
+--
+ALTER TABLE `elements`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `fk_elements_article` (`id_article`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `article`
+--
+ALTER TABLE `article`
+  MODIFY `id_article` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT pour la table `elements`
+--
+ALTER TABLE `elements`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `elements`
+--
+ALTER TABLE `elements`
+  ADD CONSTRAINT `fk_elements_article` FOREIGN KEY (`id_article`) REFERENCES `article` (`id_article`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

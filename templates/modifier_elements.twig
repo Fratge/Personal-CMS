@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+{% for element in elements %}
+<div>
+    <{{element.balise}} class="{{ element.style }}">{{ element.contenu }}  </{{element.balise}}>
+</div>
+{% endfor %}
+{% endblock %}

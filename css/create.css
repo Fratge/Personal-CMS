@@ -1,0 +1,16 @@
+form{
+    /* background-color: rgb(218, 255, 167); */
+    display: flex;
+}
+
+input{
+    padding: 25px;
+}
+
+input:focus{
+    background-color: yellow;
+}
+
+.button-create:hover{
+    background-color: rgb(146, 255, 136);
+}

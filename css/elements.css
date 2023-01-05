@@ -1,0 +1,46 @@
+.element-container{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    width: 300px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    gap: 15px;
+    color: white;
+}
+
+.element-button-container{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 20px 0 10px 0;
+}
+
+.element-button-supprimer{
+    padding: 4px;
+    background-color: rgb(255, 124, 124);
+    border-radius: 15px;
+    color: white;
+}
+
+.element-button-supprimer:hover{
+    padding: 4px;
+    background-color: rgb(254, 73, 73);
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+}
+
+.element-button-modifier{
+    padding: 4px;
+    background-color: rgb(148, 255, 152);
+    border-radius: 15px;
+    color: black;
+}
+
+.element-button-modifier:hover{
+    padding: 4px;
+    background-color: rgb(55, 102, 31);
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+}

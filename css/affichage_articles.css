@@ -1,0 +1,121 @@
+.article-crees{
+    font-size: 45px;
+    text-align: center
+}
+
+.article-titre{
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+}
+
+.article-titre-unique {
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+}
+
+.article-chapo-unique{
+    font-size: 20px;
+}
+
+.article-chapo{
+    font-size: 28px;
+}
+
+.article-auteur-unique{
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: ;
+}
+
+.article-auteur{
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.article-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+    border: 3px solid black;
+    border-radius: 25px;
+    width: 500px;
+    margin: 50px auto;
+}
+
+.article-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.article-voir{
+    padding: 5px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.article-voir:hover{
+    background-color: rgb(139, 255, 135);
+}
+
+.article-modifier, .article-supprimer{
+    padding: 5px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.article-modifier:hover {
+    background-color: rgb(80, 80, 255);
+    color: rgb(255, 132, 132);
+}
+
+.article-supprimer:hover{
+    background-color: rgb(96, 42, 189);
+    color: rgb(255, 132, 132);
+}
+
+.article-unique{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.article-element{
+    margin-top: 50px;
+    font-size: 22px;
+}
+
+.article-element > img{
+    display: flex;
+    margin-top: 25px;
+    width: 250px;
+    height: 250px;
+}
+
+.article-unique-container{
+    width: 1300px;
+    margin-right: 50px;
+    border: 3px solid black;
+    border-radius: 25px;
+    margin-top: 100px;
+    padding: 0 10px;
+}
+
+.article-unique-form{
+    padding: 20px;
+}
+
+.article-unique-form > p{
+    color: red;
+    font-size: 22px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<div class="container">
+{# 
+    <h2>Créer un elements : </h2>
+    <form method=post action="controleur.php?page=element&action=create">
+        <select name="balise" id="balise">
+            <option value="p">paragraphe</option>
+            <option value="h1">h1</option>
+            <option value="h2">h2</option>
+            <option value="h3">h3</option>
+        </select>
+        <input type="text" name="contenu" placeholder="contenu">
+        <input type="text" name="alt" placeholder="alt">
+        <input type="text" name="src" placeholder="src">
+        <input type="submit" value="Créer">
+    </form> #}
+
+    <h2 class="article-crees">Créer un article : </h2>
+    <form method=post action="controleur.php?page=article&action=create">
+        <input type="text" name="h1_article" placeholder="Titre article">
+        <input type="text" name="chapo_article" placeholder="Chapo">
+        <input type="text" name="auteur_article" placeholder="Auteur">
+        <input class="button-create" type="submit" value="Créer">
+    </form>
+</div>
+
+{% endblock %}
